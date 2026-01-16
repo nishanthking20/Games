@@ -54,15 +54,19 @@ const TicTacToe = () => {
 
   const renderSquare = (i) => {
     const value = board[i];
-    const isWinningSquare = winner && 
-      (winner === board[0] && [0, 1, 2].includes(i) ||
-       winner === board[3] && [3, 4, 5].includes(i) ||
-       winner === board[6] && [6, 7, 8].includes(i) ||
-       winner === board[0] && [0, 3, 6].includes(i) ||
-       winner === board[1] && [1, 4, 7].includes(i) ||
-       winner === board[2] && [2, 5, 8].includes(i) ||
-       winner === board[0] && [0, 4, 8].includes(i) ||
-       winner === board[2] && [2, 4, 6].includes(i));
+    const isWinningSquare =
+  winner &&
+  (
+    ((winner === board[0]) && [0, 1, 2].includes(i)) ||
+    ((winner === board[3]) && [3, 4, 5].includes(i)) ||
+    ((winner === board[6]) && [6, 7, 8].includes(i)) ||
+    ((winner === board[0]) && [0, 3, 6].includes(i)) ||
+    ((winner === board[1]) && [1, 4, 7].includes(i)) ||
+    ((winner === board[2]) && [2, 5, 8].includes(i)) ||
+    ((winner === board[0]) && [0, 4, 8].includes(i)) ||
+    ((winner === board[2]) && [2, 4, 6].includes(i))
+  );
+
 
     return (
       <button
